@@ -48,14 +48,16 @@ body, html {
     width: 110px;
 }
 .login__container .__welcome {
-    color: var(--blue-color); /* Correct usage of the custom property */
-    font-weight: 700;
+    color: var(--blue-color);
+    font-weight: 800;
     text-align: center;
     margin-top: 15px;
+    font-size: 1.5rem;
 }
 .login__container .__desc {
     font-weight: 500;
     text-align: center;
+    font-size: 12px;
 }
 .input__class {
     position: relative;
@@ -69,7 +71,7 @@ body, html {
     padding: .375rem 2.9rem;
 }
 .input__class .form-control:focus {
-    border-color: #86b7fe;
+    border-color: var(--blue-color);
     outline: 0;
     box-shadow: 0 0 4px 0 #a8d0ff;
     font-weight: 500;
@@ -149,6 +151,24 @@ body, html {
 }
 .rc-anchor-normal {
     width: 100%;
+}
+.input__class .__label {
+    position: absolute;
+    background: var(--white-color);
+    left: 42px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 500;
+    color: var(--darkgray-color);
+    pointer-events: none;
+    transition: all .3s ease;
+}
+.input__class input:focus ~ .__label,
+.input__class input:valid ~ .__label {
+    transform: translateY(-158%) scale(.9);
+    padding: 0 4px;
+    left: 33px;
+    font-weight: unset;
 }
 
 
