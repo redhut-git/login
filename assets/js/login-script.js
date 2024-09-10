@@ -1,5 +1,5 @@
-$(document).ready(function() {
-    
+$(document).ready(function () {
+
 });
 
 function togglePassword() {
@@ -15,3 +15,29 @@ function togglePassword() {
         toggleIcon.setAttribute("icon", "mdi:eye-outline");
     }
 }
+
+
+let submitBtn = document.getElementById("submit");
+let _username = document.getElementById("_username");
+let _password = document.getElementById("_password");
+
+submitBtn.addEventListener("click", function (e) {
+
+    if (_username.value == "" || _password.value == "") {
+        Swal.fire({
+            title: "Error",
+            text: "Please fill username and password.",
+            icon: "error",
+            allowOutsideClick: false
+        });
+        e.preventDefault();
+    } else if (grecaptcha.getResponse().length === 0) {
+        Swal.fire({
+            title: "Error",
+            text: "Please complete the reCAPTCHA to proceed.",
+            icon: "error",
+            allowOutsideClick: false
+        });
+        e.preventDefault();
+    }
+});
